@@ -1,0 +1,22 @@
+npx prisma init = Inicia o prisma e cria uma pasta com o nome prisma e um schema.prisma.
+Também cria uma variável no arquivo .env chamado DATABASE_URL.
+
+npx prisma db pull = Se fizermos a estrutura do banco de dados dentro do próprio banco, o prisma vai puxar
+a estrutura do mesmo e montar um schema baseado na estrutura do banco, parecido com o que faz o git.
+
+npx prisma db push = Ao definirmos o schema do banco de dados, este comando fará com que o prisma crie toda
+a estrutura do banco de dados automaticamente de acordo com o schema.
+
+npx prisma migration dev = Gera uma migration com o nome que definirmos no terminal, desse modo temos um histórico
+de alterações do banco de dados.
+
+Adicionar o comando prisma no package.json, assim como instalar algumas dependências em modo de desenvolvimento ex:
+ts-node, typescript.
+
+"prisma": {
+    "seed": "ts-node prisma/seed.ts"
+},
+
+npx prisma generate = gera o prisma client, com toda a estrutura que já criamos no banco de dados.
+
+npx prisma db seed = cria dados no banco de dados baseado no arquivo prisma/seed.ts.
